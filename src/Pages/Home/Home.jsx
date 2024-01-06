@@ -1,7 +1,13 @@
+import Rooms from "./Home/Rooms/Rooms";
+import Categories from "./Home/category/Categories";
+
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <div>
+        <Categories></Categories>
+      </div>
+      <Rooms></Rooms>
     </div>
   );
 };

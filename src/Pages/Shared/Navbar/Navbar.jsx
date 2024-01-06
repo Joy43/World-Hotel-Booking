@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import img from "../../../assets/hotel.png";
+import MenuDropdown from "./Dopdownmenu";
 const Navbar = () => {
   const Navlinks = (
     <>
@@ -18,7 +19,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-300">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,13 +45,16 @@ const Navbar = () => {
               {Navlinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className=" text-sm">
+            <img className="w-12" src={img} alt="" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{Navlinks}</ul>
         </div>
+        {/* ------------------drop down--------------------------- */}
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <MenuDropdown></MenuDropdown>
         </div>
       </div>
     </div>
