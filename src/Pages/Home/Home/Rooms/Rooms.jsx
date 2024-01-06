@@ -26,16 +26,22 @@ const Rooms = () => {
   }, [category]);
   if (loading) return <Loading />;
   return (
-    <div className="pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <div>
       {Rooms && Rooms.length > 0 ? (
-        Rooms.map((room) => <Roomcard key={room._id} room={room}></Roomcard>)
+        <div className="pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          {Rooms.map((room) => (
+            <Roomcard key={room._id} room={room} />
+          ))}
+        </div>
       ) : (
-        <Heading
-          className="text-center"
-          center={true}
-          title="Not Available in this category"
-          subtitle="Select other category"
-        ></Heading>
+        <div className="flex items-center min-h-[calc(100vh-300px)]">
+          <Heading
+            className="text-center"
+            center={true}
+            title="Not Available in this category"
+            subtitle="Select other category"
+          ></Heading>
+        </div>
       )}
     </div>
   );
