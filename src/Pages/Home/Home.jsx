@@ -5,7 +5,7 @@ import Slider from "./Slider/Slider";
 const Home = () => {
   return (
     <div>
-      <div>
+      <div className="mt-28">
         <Slider></Slider>
       </div>
       <div>
